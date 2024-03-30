@@ -1,4 +1,4 @@
-import {getRequest} from "./api";
+import { getRequest } from "./api";
 
 export const initMenu = (router, store) => {
     if (store.state.routes.length > 0) {
@@ -46,6 +46,8 @@ export const formatRoutes = (routes) => {
                     require(['../views/sta/' + component + '.vue'], resolve);
                 } else if (component.startsWith("Sys")) {
                     require(['../views/sys/' + component + '.vue'], resolve);
+                } else if (component.startsWith("map")) {
+                    require(['../views/map/' + component + '.vue'], resolve);
                 }
             }
         }
